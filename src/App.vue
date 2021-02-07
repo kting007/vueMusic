@@ -3,21 +3,20 @@
       <div class="nav">
           <header-nav></header-nav>
       </div>
-      <music-list></music-list>
-<!--      <div class="content">-->
-<!--        <router-view/>-->
-<!--     </div>-->
+      <div class="content">
+          <keep-alive>
+              <router-view></router-view>
+          </keep-alive>
+      </div>
   </div>
 </template>
 
 <script>
 import headerNav from './views/header/header'
-import musicList from  './views/header/list'
 export default {
   name: 'App',
   components: {
       headerNav,
-      musicList
   }
 }
 </script>
@@ -35,7 +34,8 @@ export default {
     color: #2c3e50;
     .content {
         width: 100%;
-        height: calc(100% - 140px);
+        height: calc(100% - 88px);
+        overflow-y: scroll;
       }
 }
 </style>

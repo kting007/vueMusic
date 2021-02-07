@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import Element from 'element-ui'
+import VueLazyload from 'vue-lazyload'
 import 'element-ui/lib/theme-chalk/index.css';
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
@@ -15,6 +16,7 @@ Vue.use(Element,{
   transfer: false
 })
 Vue.use(Antd);
+Vue.use(VueLazyload);
 Vue.use(Directives);
 Vue.prototype.bus= new Vue()
 Vue.prototype.http = https;

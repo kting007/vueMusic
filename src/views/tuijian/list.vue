@@ -3,7 +3,7 @@
         <div class="lists">
             <div class="list" v-for="item in listDatas">
                 <div class="left">
-                    <img :src="item.imgurl"/>
+                    <img v-lazy="item.imgurl"/>
                 </div>
                 <div class="right">
                     <div class="name" v-html="item.creator.name"></div>
@@ -48,7 +48,7 @@
                     rnd: Math.random(),
                     format: 'json'
                 }
-                this.http.get('http://localhost:3000/api/getList',params).then((res)=>{
+                this.http.get('http://localhost:3000/api/getDiscs',params).then((res)=>{
                     if(res.data.code===0){
                         this.listDatas = res.data.data.list;
                     }
@@ -61,7 +61,7 @@
 <style lang="less" scoped>
     .list-wrapper{
         width: 100%;
-        height: calc(100% - 290px);
+        height: calc(100% - 88px);
         overflow-y: auto;
         .lists{
             height: auto;

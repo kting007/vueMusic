@@ -6,9 +6,18 @@ const router = new Router(
     {
         routes:[
             {
-                path:'/alarm',
-                name:'alarm',
-                component:() => import('./views/alarm.vue')
+                path:'/',
+               redirect: '/tuijian'
+            },
+            {
+                path:'/tuijian',
+                name:'tuijian',
+                component:() => import('./views/tuijian/tuijian.vue')
+            },
+            {
+                path:'/singers',
+                name:'singers',
+                component:() => import('./views/singers/singer.vue')
             },
         ]
     }

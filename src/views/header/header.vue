@@ -9,11 +9,6 @@
                 {{item.name}}
             </div>
         </nav>
-        <el-carousel :interval="4000" type="card"  height="150px">
-            <el-carousel-item v-for="item in pics" :key="item.src">
-                    <img :src="item.src">
-            </el-carousel-item>
-        </el-carousel>
     </div>
 </template>
 
@@ -27,9 +22,13 @@
                     {
 
                         src: require('../../assets/img/pic1.png'),
+                        path:'/tuijian',
+                        name:'tuijian',
                     },
                     {
                         src:require('../../assets/img/pic2.png'),
+                        path:'/singers',
+                        name:'singers',
                     },
                     {
                         src:require('../../assets/img/pic3.png'),
@@ -46,10 +45,10 @@
                 ],
                 currentMenu: 0,
                 menus:[
-                    {name:'推荐',url:''},
-                    {name:'歌手',url:''},
-                    {name:'排行',url:''},
-                    {name:'搜索',url:''},
+                    {name:'推荐', path:'/tuijian'},
+                    {name:'歌手', path:'/singers'},
+                    {name:'排行', path:'/singers'},
+                    {name:'搜索', path:'/singers'},
                 ],
 
             }
@@ -60,6 +59,9 @@
             //切换导航栏
             switchMenu(item, index){
                 this.currentMenu = index;
+                this.$router.push({
+                    path: item.path,
+                })
             },
 
         }
@@ -68,7 +70,7 @@
 
 <style lang="less" scoped>
 .header{
-    height: 290px;
+    height: 88px;
     line-height: 42PX;
     width: 100%;
     text-align:center;
@@ -115,18 +117,19 @@
     }
     .nav{
         width: 100%;
-        height: 44px;
+        height: 40px;
         line-height: 44px;
         display: flex;
         justify-content: space-around;
         padding: 0 20px;
         div{
             width: 40px;
+            text-align: center;
             color: @common-color;
         }
         .active{
             color: @common-ye;
-            border-bottom: 1px solid @common-ye;
+            border-bottom: 2px solid @common-ye;
         }
     }
 }
