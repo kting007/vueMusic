@@ -37,7 +37,6 @@
                     inCharset: 'utf-8',
                     outCharset: 'utf-8',
                     notice: 0,
-                    format: 'jsonp',
                     platform: 'yqq',
                     hostUin: 0,
                     sin: 0,

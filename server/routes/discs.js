@@ -3,15 +3,8 @@ var router = express.Router();
 var axios = require('axios')
 
 const headers={
-  'accept': 'application/json, text/javascript',
-  'origin': 'https://y.qq.com',
-  'referer': 'https://y.qq.com/',
-  'sec-ch-ua':' "Chromium";v="88", "Google Chrome";v="88", ";Not A Brand";v="99"',
-  'sec-ch-ua-mobile': '?0',
-  'sec-fetch-dest': 'empty',
-  'sec-fetch-mode': 'cors',
-  'sec-fetch-site': 'same-site',
-  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36',
+  referer: 'https://c.y.qq.com/',
+  host: 'c.y.qq.com'
 };
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -22,6 +15,7 @@ router.get('/', function(req, res, next) {
   }).then((response)=>{
     console.log('11')
     res.json(response.data)
+    next()
   }).catch((e)=>{
     console.log('error')
   })

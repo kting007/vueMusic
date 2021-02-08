@@ -10,22 +10,6 @@ var singersRouter = require('./routes/singers');
 
 var app = express();
 const cors = require('cors')
-app.all("*",(req,res,next)=>{
-  //设置允许跨域的域名，*代表允许任意域名跨域 第二种方法处理跨越
-  res.header("Access-Control-Allow-Origin",'http://localhost:8081');//火狐，360本地开发需要具体写前端的端口看，这是一个坑。
-  res.header("Access-Control-Allow-Origin", "*");//谷歌浏览器写*就行
-  //允许的header类型
-  res.header('Access-Control-Allow-Headers:Origin,X-Requested-With,Authorization,Content-Type,Accept,Z-Key')
-  //跨域允许的请求方式
-  res.header("Access-Control-Allow-Methods","DELETE,PUT,POST,GET,OPTIONS");
-  res.header("X-Powered-By","Express");
-  res.header("Content-Type","application/json;charset=utf-8");
-  res.header("Access-Control-Allow-Credentials",true)
-//     if (req.method.toLowerCase() == 'options')
-//       res.send(200);  //让options尝试请求快速结束
-//     else
-  next();
-})
 app.use(cors())
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
